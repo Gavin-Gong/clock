@@ -25,15 +25,16 @@
 		max-width: 240px;
 		margin: 0 auto;
 		height: 100vh;
-		font-family: monospace;
+		font-family: Cascadia Code,  Fira Code iScript, Menlo, Monaco, 'Courier New', monospace;
+		background: #333;
 	}
 
 	h1 {
-		color: #ff3e00;
+		color: #ddd;
 		text-transform: uppercase;
 		font-size: 8em;
 		font-weight: 400;
-		margin-top: -3em;
+		margin-top: -2em;
 	}
 
 	@media (min-width: 640px) {
