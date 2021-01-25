@@ -1,7 +1,14 @@
 <script>
 import dayjs from "dayjs"
-const percent = (dayjs().unix() / (365 * 24 * 60 * 60 * 1000) * 100).toFixed(2)
+let percent = computePercent()
+setInterval(() => {
+  percent = computePercent()
+}, 1000 * 60);
 const year = dayjs().year()
+
+function computePercent() {
+  return (dayjs().unix() / (365 * 24 * 60 * 60 * 1000) * 100).toFixed(2)
+}
 </script>
 
 <div class="progress" >
