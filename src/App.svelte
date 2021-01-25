@@ -1,14 +1,26 @@
 <script>
 	import { onDestroy } from "svelte"
 	import dayjs from "dayjs"
-	const interval = setInterval(() => dateTime = dayjs().format("YYYY-MM-DD hh:mm:ss"));
+	import Progress from "./Progress.svelte"
+
 	onDestroy(() => clearInterval(interval));
 
+	const interval = setInterval(() => dateTime = dayjs().format("MM-DD HH:mm:ss"));
+	function handleFullScreen() {
+		if (!document.fullscreenElement) {
+      document.documentElement.requestFullscreen();
+		} else {
+			if (document.exitFullscreen) {
+				document.exitFullscreen();
+			}
+		}
+	}
 	export let dateTime;
 </script>
 
 <main>
-	<h1>{dateTime}</h1>
+	<h1 class="tick" on:dblclick={handleFullScreen} >{dateTime}</h1>
+	<Progress />
 </main>
 
 <style>
@@ -35,6 +47,8 @@
 		font-size: 8em;
 		font-weight: 400;
 		margin-top: -2em;
+		cursor: pointer;
+		-webkit-user-select: none;
 	}
 
 	@media (min-width: 640px) {
