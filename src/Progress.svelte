@@ -1,13 +1,16 @@
 <script>
-import dayjs from "dayjs"
-let percent = computePercent()
+let now = new Date();
+let percent = computePercent();
 setInterval(() => {
-  percent = computePercent()
+  percent = computePercent();
 }, 1000 * 60);
-const year = dayjs().year()
 
+const year = now.getFullYear();
 function computePercent() {
-  return (dayjs().unix() / (365 * 24 * 60 * 60 * 1000) * 100).toFixed(2)
+  now = new Date();
+  const start = new Date(now.getFullYear(), 0, 1);
+  const end = new Date(now.getFullYear() + 1, 0, 1);
+  return ((now - start) / (end - start) * 100).toFixed(2);
 }
 </script>
 
