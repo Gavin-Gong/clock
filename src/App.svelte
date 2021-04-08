@@ -24,6 +24,10 @@
 </main>
 
 <style>
+	@font-face {
+		font-family: 'LESLIE';
+		src: url("/assets/LESLIE Regular.ttf")
+	}
 	* {
 		margin: 0;
 		padding: 0;
@@ -39,6 +43,9 @@
 		height: 100vh;
 		font-family: Cascadia Code,  Fira Code iScript, Menlo, Monaco, 'Courier New', monospace;
 		background: #333;
+	}
+	.tick {
+		font-family: LESLIE, monospace;
 	}
 
 	h1 {
