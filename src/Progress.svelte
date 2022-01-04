@@ -15,7 +15,7 @@ function computePercent() {
 </script>
 
 <div class="progress" >
-  <div class="progress-bar" style="width: {percent}vw">
+  <div class="progress-bar" style="min-width: {percent}vw">
     {percent}% of {year}
   </div>
 </div>
